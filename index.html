@@ -19,9 +19,9 @@
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Contact</a></li>
-                    <i class="fas fa-times" onclick="closemenu"></i>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
-                <i class="fas fa-bars" onclick="openmenu"></i>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <p>UI/UX Designer</p>
@@ -175,11 +175,12 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
+
     <script>
         var sidemenu = document.getElementById("sidemenu");
 
         function openmenu(){
-            sidemenu.style.right = "0";
+            sidemenu.style.right = "0px";
         }
         function closemenu(){
             sidemenu.style.right = "-200px";
