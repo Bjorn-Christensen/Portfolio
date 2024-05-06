@@ -1,10 +1,12 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div id="header">
         <div class="container">
@@ -24,6 +26,7 @@
             </div>
         </div>
     </div>
+<!-- ---------about--------- -->
     <div id="about">
         <div class="container">
             <div class="row">
@@ -31,10 +34,54 @@
                     <img src="images/user.png">
                 </div>
                 <div class="about-col-2">
-                    <h1>About Me</h1>
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Info Goes Here</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <!-- Skills Info -->
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                            <li><span>App Development</span><br>Building Android/iOS apps</li>
+                        </ul>
+                    </div>
+                    <!-- Experience Info -->
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Eduworks</span><br>Internship with a focus on data collection and analysis.</li>
+                        </ul>
+                    </div>
+                    <!-- Education Info -->
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>McGill University, Montréal, Québec</span><br>BS in Computer Science, Double Major East Asian Studies and Minor in East Asian Language</li>
+                            <li><span>Clavis Sprogskole, Roskilde, Denmark</span><br>Web app Development</li>
+                            <li><span>Shantou University, Guangdong, China</span><br>Building Android/iOS apps</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 </body>
 </html>
